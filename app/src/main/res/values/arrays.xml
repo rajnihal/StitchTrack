@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="style_options">
+        <item>COLLAR</item>
+        <item>FRONT</item>
+        <item>BACK</item>
+        <item>SLEEVE</item>
+        <item>ASSEMBLY</item>
+    </string-array>
+</resources>

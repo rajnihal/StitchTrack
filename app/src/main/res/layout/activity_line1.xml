@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Scrollable content -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <ImageView
+            android:id="@+id/toolbar_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:contentDescription="@string/todo"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:src="@drawable/img_1" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <!-- TextView for displaying line details -->
+                <TextView
+                    android:id="@+id/textViewLineDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="LINE 1"
+                    android:textAlignment="gravity"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- TableLayout for displaying additional details -->
+                <TableLayout
+                    android:id="@+id/tableLineDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Define table rows and cells as needed -->
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="STYLE"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="LONG SLEEVE SHIRT"
+                            android:textColor="@color/black" />
+                    </TableRow>
+
+                    <!-- Add 10 rows -->
+                    <TableRow android:layout_width="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="SECTION"
+                            android:textStyle="bold" />
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TableRow android:orientation="vertical">
+
+                                <Spinner
+                                    android:id="@+id/styleSpinner"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:entries="@array/style_options"
+                                    android:padding="8dp" />
+                            </TableRow>
+                        </TableLayout>
+                    </TableRow>
+
+                    <!-- Table header -->
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="134dp"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="DATE"
+                            android:textColor="@color/black"
+                            android:textStyle="bold">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/selectedDateTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Selected Date: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+
+                        <CalendarView
+                            android:id="@+id/calendarView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="219dp"
+                            android:layout_marginTop="16dp" />
+
+
+                    </TableRow>
+
+                    <TableLayout
+                        android:id="@+id/tablelayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TableRow>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="OPERATION"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:verticalScrollbarPosition="defaultPosition" />
+
+                            <TextView
+                                android:layout_width="109dp"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="OPERATOR"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="815dp"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="TIME"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="CAPACITY"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="83dp"
+                                android:layout_height="match_parent"
+                                android:padding="8dp"
+                                android:text="TARGET (80%)"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="ACTUAL"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="EFFICIENCY"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="DOWNTIME"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="158dp"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="PERFORMACE"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="203dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:layout_width="87dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="86dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="90dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="87dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="85dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="8:30-9:30" />
+
+                                <TextView
+                                    android:layout_width="83dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="TOTAL" />
+
+                            </TableRow>
+
+
+                        </TableLayout>
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <!-- Data rows -->
+                            <!-- Repeat the following block for each row -->
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="Placket Hem (L)" />
+
+                                <TextView
+                                    android:layout_width="87dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="SUMITRA" />
+
+                                <EditText
+                                    android:id="@+id/time11"
+                                    android:layout_width="61dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time12"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time13"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time14"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time15"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time16"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time17"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time18"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time19"
+                                    android:layout_width="91dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/tot1"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/cap1"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="232" />
+
+                                <TextView
+                                    android:id="@+id/tar1"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/act1"
+                                    android:layout_width="81dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="170" />
+
+                                <TextView
+                                    android:id="@+id/eff1"
+                                    android:layout_width="82dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/down1"
+                                    android:layout_width="85dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/perf1"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <Button
+                                    android:id="@+id/but1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="Row 2" />
+
+                                <TextView
+                                    android:layout_width="87dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="SANIYA" />
+
+                                <EditText
+                                    android:id="@+id/time21"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time22"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time23"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time24"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time25"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time26"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time27"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time28"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time29"
+                                    android:layout_width="91dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/tot2"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/cap2"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="211" />
+
+                                <TextView
+                                    android:id="@+id/tar2"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/act2"
+                                    android:layout_width="81dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="185" />
+
+                                <TextView
+                                    android:id="@+id/eff2"
+                                    android:layout_width="82dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/down2"
+                                    android:layout_width="85dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/perf2"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <Button
+                                    android:id="@+id/but2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="Row 3" />
+
+                                <TextView
+                                    android:layout_width="87dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="SMRITI" />
+
+                                <EditText
+                                    android:id="@+id/time31"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time32"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time33"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time34"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time35"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time36"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time37"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time38"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time39"
+                                    android:layout_width="91dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/tot3"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/cap3"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="200" />
+
+                                <TextView
+                                    android:id="@+id/tar3"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/act3"
+                                    android:layout_width="81dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="145" />
+
+                                <TextView
+                                    android:id="@+id/eff3"
+                                    android:layout_width="82dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/down3"
+                                    android:layout_width="85dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/perf3"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <Button
+                                    android:id="@+id/but3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+                            </TableRow>
+                            <TableRow
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="Row 4" />
+
+                                <TextView
+                                    android:layout_width="87dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="Pinki" />
+
+                                <EditText
+                                    android:id="@+id/time41"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time42"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time43"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time44"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time45"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time46"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time47"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time48"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time49"
+                                    android:layout_width="91dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/tot4"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/cap4"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="200" />
+
+                                <TextView
+                                    android:id="@+id/tar4"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/act4"
+                                    android:layout_width="81dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="145" />
+
+                                <TextView
+                                    android:id="@+id/eff4"
+                                    android:layout_width="82dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/down4"
+                                    android:layout_width="85dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/perf4"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <Button
+                                    android:id="@+id/but4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+                            </TableRow>
+                            <TableRow
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="Row 4" />
+
+                                <TextView
+                                    android:layout_width="87dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="Sullu" />
+
+                                <EditText
+                                    android:id="@+id/time51"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time52"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time53"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time54"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time55"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time56"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time57"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time58"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/time59"
+                                    android:layout_width="91dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/tot5"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/cap5"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="200" />
+
+                                <TextView
+                                    android:id="@+id/tar5"
+                                    android:layout_width="84dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <TextView
+                                    android:id="@+id/act5"
+                                    android:layout_width="81dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"
+                                    android:text="145" />
+
+                                <TextView
+                                    android:id="@+id/eff5"
+                                    android:layout_width="82dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/down5"
+                                    android:layout_width="85dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/perf5"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+
+                                <Button
+                                    android:id="@+id/but5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp" />
+                            </TableRow>
+
+                            <!-- End of data rows -->
+                            <!-- Data rows -->
+                        </TableLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Export"
+                            android:id="@+id/exportButton"/>
+
+
+
+                    </TableLayout>
+
+
+                </TableLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+</LinearLayout>

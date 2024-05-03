@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TrackIT</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="app_description">The purpose of your application, its features, and how it benefits the users. You can provide information about the product tracking functionality, user interface, supported platforms, etc. Make sure to convey the value proposition of your app effectively to attract users.</string>
+    <string name="technical_data_sheet">TECHNICAL DATA SHEET</string>
+    <string name="todo" />
+
+</resources>
